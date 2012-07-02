@@ -12,28 +12,11 @@ $(function() {
     $(".judgingbox").droppable({
         hoverClass: 'over',
         tolerance: 'intersect',
-        accept: ".cat"
-    })
-    $calling.droppable({
+        accept: ".cat",
         drop: function( event, ui ) {
             $(this).removeClass('over').addClass('out');
             $item = ui.draggable;
             $item.appendTo($(this));
-            // $item.fadeOut(function() {
-            //     $item
-            //         .appendTo( $calling )
-            //         .fadeIn();
-            //         //.effect("transfer", {to: $calling}, 500, movedToCalling);
-            //  });
-        },
-//        over: function() {
-//               $(this).removeClass('out').addClass('over');
-//        },
-//        out: function() {
-//                $(this).removeClass('over').addClass('out');
-//        }
-    });
-    function movedToCalling() {
-
-    }
+        }
+    })
 });
