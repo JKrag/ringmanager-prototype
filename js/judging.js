@@ -17,6 +17,10 @@ $(function() {
             $(this).removeClass('over').addClass('out');
             $item = ui.draggable;
             $item.appendTo($(this));
+            $('#waitingbox>div').tsort();
+            $('#callingbox>div').tsort();
+            $('#readybox>div').tsort();
+            $('#donebox>div').tsort();
         }
     })
 });
