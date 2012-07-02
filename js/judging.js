@@ -18,7 +18,7 @@ $(function() {
         drop: function( event, ui ) {
             $(this).removeClass('over').addClass('out');
             $item = ui.draggable;
-            $item.appendTo($calling);
+            $item.appendTo($(this));
             // $item.fadeOut(function() {
             //     $item
             //         .appendTo( $calling )
