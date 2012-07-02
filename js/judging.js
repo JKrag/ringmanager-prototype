@@ -14,7 +14,7 @@ $(function() {
         tolerance: 'intersect',
         accept: ".cat",
         drop: function( event, ui ) {
-            $(this).removeClass('over').addClass('out');
+//            $(this).removeClass('over').addClass('out');
             $item = ui.draggable;
             $item.appendTo($(this));
             $('#waitingbox>div').tsort();
