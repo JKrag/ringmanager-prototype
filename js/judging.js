@@ -18,12 +18,13 @@ $(function() {
         drop: function( event, ui ) {
             $(this).removeClass('over').addClass('out');
             $item = ui.draggable;
-            $item.fadeOut(function() {
-                $item
-                    .appendTo( $calling )
-                    .fadeIn();
-                    //.effect("transfer", {to: $calling}, 500, movedToCalling);
-             });
+            $item.appendTo($calling);
+            // $item.fadeOut(function() {
+            //     $item
+            //         .appendTo( $calling )
+            //         .fadeIn();
+            //         //.effect("transfer", {to: $calling}, 500, movedToCalling);
+            //  });
         },
 //        over: function() {
 //               $(this).removeClass('out').addClass('over');
