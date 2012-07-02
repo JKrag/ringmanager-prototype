@@ -2,24 +2,18 @@
     height: 500px;
 }
 
-
-#trash, #items{
-        height: 50px;
-        width: 50px;
-}
-
-#trash {
-        color: #354e62;
-}
-
 .ui-draggable-dragging {
-    height: 50px;
+    border: 1px solid orange;
 }
 
 .over {
-    background-color: #cedae3;
+    border-width: 4px;
 }
 
 .out {
-    background-color: #a6bcce;
+    border-width: 1px;
+}
+
+.cat {
+    width: 120px;
 }

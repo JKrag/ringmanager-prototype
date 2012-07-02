@@ -1,49 +1,38 @@
 $(function() {
-        var $waiting = $( "#waitingbox" ),
-            $calling = $( "#callingbox" ),
-            $ready = $( "#readybox" ),
-            $done = $( "#donebox" );
+    var $waiting = $( "#waitingbox" ),
+        $calling = $( "#callingbox" ),
+        $ready = $( "#readybox" ),
+        $done = $( "#donebox" );
 
-        $(".cat").draggable({
-                revert: "invalid"
-        });
-        $(".item").draggable({
-                revert: "invalid"
-        });
-        $("#draggable").draggable({
-                revert: "invalid"
-        });
-        $calling.droppable({
-                tolerance: 'touch',
-                //accept: ".cat",
-                drop: function( event, ui ) {
-                    confirm("drop?");
-                    // $item.fadeOut(function() {
-                    //     $item
-                    //         .find( "a.ui-icon-refresh" )
-                    //             .remove()
-                    //         .end()
-                    //         .css( "width", "96px")
-                    //         .append( trash_icon )
-                    //         .find( "img" )
-                    //             .css( "height", "72px" )
-                    //         .end()
-                    //         .appendTo( $calling )
-                    //         .fadeIn();
-                    // });
-                }
-        });
-        $("#trash").droppable({
-                tolerance: 'touch',
-                over: function() {
-                       $(this).removeClass('out').addClass('over');
-                },
-                out: function() {
-                        $(this).removeClass('over').addClass('out');
-                },
-                drop: function() {
-                        var answer = confirm('Permantly delete this item?');
-                        $(this).removeClass('over').addClass('out');
-                }
-        });
+    $(".cat").draggable({
+            revert: "invalid",
+            helper: "clone",
+            cursor: "move"
+    });
+    $(".judgingbox").droppable({
+        hoverClass: 'over',
+        tolerance: 'intersect',
+        accept: ".cat"
+    })
+    $calling.droppable({
+        drop: function( event, ui ) {
+            $(this).removeClass('over').addClass('out');
+            $item = ui.draggable;
+            $item.fadeOut(function() {
+                $item
+                    .appendTo( $calling )
+                    .fadeIn();
+                    //.effect("transfer", {to: $calling}, 500, movedToCalling);
+             });
+        },
+//        over: function() {
+//               $(this).removeClass('out').addClass('over');
+//        },
+//        out: function() {
+//                $(this).removeClass('over').addClass('out');
+//        }
+    });
+    function movedToCalling() {
+
+    }
 });
