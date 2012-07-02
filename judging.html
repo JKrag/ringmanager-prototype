@@ -15,6 +15,8 @@
       }
     </style>
     <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="local.css" rel="stylesheet">
+      <link href="css/cus-icons.css"  rel="stylesheet">
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -27,6 +29,9 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="bootstrap/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="bootstrap/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="bootstrap/ico/apple-touch-icon-57-precomposed.png">
+      <style>
+	#draggable { width: 150px; height: 150px; padding: 0.5em; border: 1px solid blue;}
+	</style>
   </head>
 
   <body>
@@ -58,10 +63,59 @@
     </div>
 
     <div class="container">
-
+        
+        <div class="row">
+            
+        </div>
+        <div class="row">
+            <h2 class="span3">
+                Waiting
+            </h2>
+            <h2 class="span3">
+                Call to ring
+            </h2>
+            <h2 class="span3">
+                Ready
+            </h2>
+            <h2 class="span3">
+                Done
+            </h2>
+        </div>
       <div class="row">
-        <div class="span12">
-           <img src="99_sample_noframe.png"/>
+        <div class="span3">
+           <div class="well judgingbox waitingbox">
+               <div class="btn btn-large btn-inverse cat"><i class="cus-female"></i> 127</div>
+               <div class="btn btn-large btn-inverse cat"><i class="cus-male"></i> 131</div>
+               <div class="btn btn-large btn-inverse cat"><i class="cus-male"></i> 132</div>
+               <div class="btn btn-large btn-inverse cat"><i class="cus-female"></i> 133</div>
+               <div class="btn btn-large btn-inverse cat"><i class="cus-female"></i> 136</div>
+               <div class="btn btn-large btn-inverse cat"><i class="cus-male"></i> 139</div>
+               <div class="btn btn-large btn-inverse cat"><i class="cus-male"></i> 142</div>
+               <div class="btn btn-large btn-inverse cat"><i class="cus-male"></i> 143</div>
+               <div class="btn btn-large btn-inverse cat"><i class="cus-female"></i> 145</div>
+            </div>
+        </div>
+        <div class="span3">
+           <div class="well judgingbox callingbox">
+           </div>
+        </div>
+
+        <div class="span3">
+            <div class="well judgingbox readybox">
+            </div>
+        </div>
+
+        <div class="span3">
+           <div class="well judgingbox donebox">
+                    <div id="trash" class="out">
+                <span>Trash</span>
+        </div>
+        <div id="items">
+                <div class="item"><span>Item 1</span></div>
+                <div class="item"><span>Item 2</span></div>
+                <div class="item"><span>Item 3</span></div>
+        </div>
+            </div>
         </div>
       </div>
  
@@ -74,6 +128,12 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="bootstrap/js/jquery-1.7.2.js"></script>
+    <script src="bootstrap/js/jquery-ui-1.8.21.custom.min.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
+	<script src="js/jquery.ui.core.js"></script>
+	<script src="js/jquery.ui.widget.js"></script>
+	<script src="js/jquery.ui.mouse.js"></script>
+	<script src="js/jquery.ui.draggable.js"></script>
+    <script src="js/judging.js"></script>
   </body>
 </html>

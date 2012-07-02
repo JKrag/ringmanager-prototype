@@ -1,0 +1,25 @@
+.judgingbox {
+    height: 500px;
+}
+
+
+#trash, #items{
+        height: 50px;
+        width: 50px;
+}
+
+#trash {
+        color: #354e62;
+}
+
+.ui-draggable-dragging {
+    height: 50px;
+}
+
+.over {
+    background-color: #cedae3;
+}
+
+.out {
+    background-color: #a6bcce;
+}
