@@ -7,13 +7,14 @@
 }
 
 .over {
-    border-width: 4px;
+    background-color: #DDD;
 }
 
 .out {
-    border-width: 1px;
+    background-color: #EEE;
 }
 
 .cat {
     width: 120px;
+    margin-bottom: 5px;
 }
