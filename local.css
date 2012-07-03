@@ -20,7 +20,11 @@
 }
 
 .cat {
-    width: 120px;
+    width: 200px;
     margin-bottom: 5px;
     position: relative;
+    text-align:left;
+}
+.cat small {
+    font-size: 0.85em;
 }
