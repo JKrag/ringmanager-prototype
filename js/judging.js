@@ -1,40 +1,75 @@
 $(function() {
-    var removed;
+    //store all elements involved in last "move all" operation 
+    var removedCats;
+    var calledCats;
+    var readiedCats;
+    var doneCats;
+
     var $waiting = $( "#waitingbox" ),
         $calling = $( "#callingbox" ),
         $ready = $( "#readybox" ),
         $done = $( "#donebox" );
 
-    $('#all2calling').click(function() {
-        $('#callingbox').append( $('#waitingbox>div') );
+    function swapCallButton(undo) { $('#all2calling').toggle(!undo); $('#undocall').toggle(undo); }
+
+    function swapReadyButton(undo) { $('#all2ready').toggle(!undo); $('#undoready').toggle(undo); }
+
+    function swapDoneButton(undo) { $('#all2done').toggle(!undo); $('#undodone').toggle(undo); }
+
+    function swapClearButton(undo) { $('#allclear').toggle(!undo); $('#undoclear').toggle(undo); }
+
+    function sortAll() {
+        $('#waitingbox>div').tsort();
         $('#callingbox>div').tsort();
+        $('#readybox>div').tsort();
+        $('#donebox>div').tsort();
+    }
+
+    $('#all2calling').click(function() {
+        calledCats =  $('#waitingbox>div').appendTo($('#callingbox'));
+        sortAll();
+        swapCallButton(true);
+    });
+    $('#undocall').hide().click(function() {
+        console.log('undo call')
+        calledCats.appendTo('#waitingbox');
+        sortAll();
+        swapCallButton(false);
     });
 
     $('#all2ready').click(function() {
-        $('#readybox').append( $('#callingbox>div') );
-        $('#readybox>div').tsort();
+        readiedCats = $('#callingbox>div').appendTo($('#readybox'));
+        sortAll();
+        swapReadyButton(true);
+    });
+    $('#undoready').hide().click(function() {
+        console.log('undo ready')
+        readiedCats.appendTo('#callingbox');
+        sortAll();
+        swapReadyButton(false);
     });
 
     $('#all2done').click(function() {
         $('#donebox').append( $('#readybox>div') );
-        $('#donebox>div').tsort();
+        sortAll();
+        swapDoneButton(true);
+    });
+    $('#undodone').hide().click(function() {
+        console.log('undo done')
+        doneCats.appendTo('#readybox');
+        sortAll();
+        swapDoneButton(false);
     });
 
     $('#allclear').click(function() {
         console.log('clear')
-        removed = $('#donebox>div').detach();
-        swapDoneButton();
+        removedCats = $('#donebox>div').detach();
+        swapClearButton(true);
     });
-
-    function swapDoneButton() {
-        $('#allclear').toggle();
-        $('#undoclear').toggle();
-    }
-
     $('#undoclear').hide().click(function() {
         console.log('undo clear')
-        removed.appendTo('#donebox');
-        swapDoneButton();
+        removedCats.appendTo('#donebox');
+        swapClearButton(false);
     });
 
     $(".cat").draggable({
@@ -53,11 +88,7 @@ $(function() {
             //$item.css().clear
             $item.appendTo($(this));
 
-            $('#waitingbox>div').tsort();
-            $('#callingbox>div').tsort();
-            $('#readybox>div').tsort();
-            $('#donebox>div').tsort();
-
+            sortAll();
         }
     })
     function animatedSort() {
