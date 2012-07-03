@@ -1,8 +1,41 @@
 $(function() {
+    var removed;
     var $waiting = $( "#waitingbox" ),
         $calling = $( "#callingbox" ),
         $ready = $( "#readybox" ),
         $done = $( "#donebox" );
+
+    $('#all2calling').click(function() {
+        $('#callingbox').append( $('#waitingbox>div') );
+        $('#callingbox>div').tsort();
+    });
+
+    $('#all2ready').click(function() {
+        $('#readybox').append( $('#callingbox>div') );
+        $('#readybox>div').tsort();
+    });
+
+    $('#all2done').click(function() {
+        $('#donebox').append( $('#readybox>div') );
+        $('#donebox>div').tsort();
+    });
+
+    $('#allclear').click(function() {
+        console.log('clear')
+        removed = $('#donebox>div').detach();
+        swapDoneButton();
+    });
+
+    function swapDoneButton() {
+        $('#allclear').toggle();
+        $('#undoclear').toggle();
+    }
+
+    $('#undoclear').hide().click(function() {
+        console.log('undo clear')
+        removed.appendTo('#donebox');
+        swapDoneButton();
+    });
 
     $(".cat").draggable({
             revert: "invalid",
