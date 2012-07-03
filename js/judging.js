@@ -50,7 +50,7 @@ $(function() {
     });
 
     $('#all2done').click(function() {
-        $('#donebox').append( $('#readybox>div') );
+        doneCats = $('#readybox>div').appendTo($('#donebox'));
         sortAll();
         swapDoneButton(true);
     });
@@ -82,6 +82,10 @@ $(function() {
         tolerance: 'intersect',
         accept: ".cat",
         drop: function( event, ui ) {
+            swapClearButton(false);
+            swapDoneButton(false);
+            swapReadyButton(false);
+            swapCallButton(false);
             $item = ui.draggable;
             $item.css('top','');
             $item.css('left','');
