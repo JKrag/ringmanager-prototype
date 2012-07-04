@@ -34,26 +34,28 @@ $(function() {
 
     $('#all2calling').click(function() {
         calledCats =  $('#waitingbox>div').appendTo($('#callingbox'));
+        console.log('All2Calling - saved ' + calledCats.size() + ' for undo')
         sortAll();
         allButtonsGreen();
         swapCallButton(true);
     });
     $('#undocall').hide().click(function() {
         console.log('undo call')
-        calledCats.appendTo('#waitingbox');
+        calledCats.appendTo($('#waitingbox'));
         sortAll();
         allButtonsGreen();
     });
 
     $('#all2ready').click(function() {
         readiedCats = $('#callingbox>div').appendTo($('#readybox'));
+        console.log('All2ready - saved ' + readiedCats.size() + ' for undo')
         sortAll();
         allButtonsGreen();
         swapReadyButton(true);
     });
     $('#undoready').hide().click(function() {
         console.log('undo ready')
-        readiedCats.appendTo('#callingbox');
+        readiedCats.appendTo($('#callingbox'));
         sortAll();
         allButtonsGreen();
     });
@@ -66,7 +68,7 @@ $(function() {
     });
     $('#undodone').hide().click(function() {
         console.log('undo done')
-        doneCats.appendTo('#readybox');
+        doneCats.appendTo($('#readybox'));
         sortAll();
         allButtonsGreen();
     });
@@ -79,7 +81,7 @@ $(function() {
     });
     $('#undoclear').hide().click(function() {
         console.log('undo clear')
-        removedCats.appendTo('#donebox');
+        removedCats.appendTo($('#donebox'));
         allButtonsGreen();
     });
 
