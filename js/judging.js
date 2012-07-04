@@ -35,48 +35,52 @@ $(function() {
     $('#all2calling').click(function() {
         calledCats =  $('#waitingbox>div').appendTo($('#callingbox'));
         sortAll();
+        allButtonsGreen();
         swapCallButton(true);
     });
     $('#undocall').hide().click(function() {
         console.log('undo call')
         calledCats.appendTo('#waitingbox');
         sortAll();
-        swapCallButton(false);
+        allButtonsGreen();
     });
 
     $('#all2ready').click(function() {
         readiedCats = $('#callingbox>div').appendTo($('#readybox'));
         sortAll();
+        allButtonsGreen();
         swapReadyButton(true);
     });
     $('#undoready').hide().click(function() {
         console.log('undo ready')
         readiedCats.appendTo('#callingbox');
         sortAll();
-        swapReadyButton(false);
+        allButtonsGreen();
     });
 
     $('#all2done').click(function() {
         doneCats = $('#readybox>div').appendTo($('#donebox'));
         sortAll();
+        allButtonsGreen();
         swapDoneButton(true);
     });
     $('#undodone').hide().click(function() {
         console.log('undo done')
         doneCats.appendTo('#readybox');
         sortAll();
-        swapDoneButton(false);
+        allButtonsGreen();
     });
 
     $('#allclear').click(function() {
         console.log('clear')
         removedCats = $('#donebox>div').detach();
+        allButtonsGreen();
         swapClearButton(true);
     });
     $('#undoclear').hide().click(function() {
         console.log('undo clear')
         removedCats.appendTo('#donebox');
-        swapClearButton(false);
+        allButtonsGreen();
     });
 
     $(".cat").draggable({
@@ -89,10 +93,7 @@ $(function() {
         tolerance: 'intersect',
         accept: ".cat",
         drop: function( event, ui ) {
-            swapClearButton(false);
-            swapDoneButton(false);
-            swapReadyButton(false);
-            swapCallButton(false);
+            allButtonsGreen();
             $item = ui.draggable;
             $item.css('top','');
             $item.css('left','');
