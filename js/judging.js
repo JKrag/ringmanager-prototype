@@ -18,6 +18,13 @@ $(function() {
 
     function swapClearButton(undo) { $('#allclear').toggle(!undo); $('#undoclear').toggle(undo); }
 
+    function allButtonsGreen() {
+        swapCallButton(false);
+        swapReadyButton(false);
+        swapDoneButton(false);
+        swapClearButton(false);
+    }
+
     function sortAll() {
         $('#waitingbox>div').tsort();
         $('#callingbox>div').tsort();
