@@ -75,43 +75,27 @@
     <div class="container">
         
         <div class="row">
-          <div class="span5">
-            <a class="btn btn-large btn-primary" href="groups.html"><i class="icon-white icon-arrow-left"></i> Select new group</a>
+          <div class="span4">
+            <a class="btn btn-primary" href="groups.html"><i class="icon-white icon-arrow-left"></i> Select new group</a>
           </div>
-          <div class="span5 offset2">
-            <div class="alert alert-info">
-                <button class="close" data-dismiss="alert">×</button>
-                <span class="label label-info"> Instructions</span> Use drag-drop to move cats to different status.
-            </div>
+          <div class="span8">
+            <div class="alert alert-info"><button class="close" data-dismiss="alert">×</button><span class="label label-info"> Instructions</span> Use drag-drop to move cats to different status.</div>
           </div>
-        </div>
-        <div class="row">
-            <h2 class="span3">
-                Waiting
-            </h2>
-            <h2 class="span3">
-                Call to ring
-            </h2>
-            <h2 class="span3">
-                Ready
-            </h2>
-            <h2 class="span3">
-                Done
-            </h2>
         </div>
       <div class="row">
         <div class="span3">
+            <h3>Waiting</h3>
            <div id="waitingbox" class="well judgingbox">
-               <div class="btn btn-large btn-inverse cat" id="127"><i class="cus-female"></i> 127 - NFO n 09</div>
-               <div class="btn btn-large btn-inverse cat" id="131"><i class="cus-male"></i> 131 - NFO n 03</div>
-               <div class="btn btn-large btn-inverse cat" id="132"><i class="cus-male"></i> 132 - NFO a 22</div>
-               <div class="btn btn-large btn-inverse cat" id="133"><i class="cus-female"></i> 133 - MCO n</div>
-               <div class="btn btn-large btn-inverse cat" id="136"><i class="cus-female"></i> 136 - MCO n 03 24</div>
-               <div class="btn btn-large btn-inverse cat" id="139"><i class="cus-male"></i> 139 - MCO n</div>
-               <div class="btn btn-large btn-inverse cat" id="142"><i class="cus-male"></i> 142 - MCO a 02 23</div>
-               <div class="btn btn-large btn-inverse cat" id="143"><i class="cus-male"></i> 143 - OLH fs 22</div>
-               <div class="btn btn-large btn-inverse cat" id="145"><i class="cus-female"></i> 145 - SRL e</div>
-               <div class="btn btn-large btn-inverse cat" id="147"><i class="cus-female"></i> 147 - SOM o</div>
+               <div class="btn btn-inverse cat" id="127"><i class="cus-female"></i> 127 - NFO n 09</div>
+               <div class="btn btn-inverse cat" id="131"><i class="cus-male"></i> 131 - NFO n 03</div>
+               <div class="btn btn-inverse cat" id="132"><i class="cus-male"></i> 132 - NFO a 22</div>
+               <div class="btn btn-inverse cat" id="133"><i class="cus-female"></i> 133 - MCO n</div>
+               <div class="btn btn-inverse cat" id="136"><i class="cus-female"></i> 136 - MCO n 03 24</div>
+               <div class="btn btn-inverse cat" id="139"><i class="cus-male"></i> 139 - MCO n</div>
+               <div class="btn btn-inverse cat" id="142"><i class="cus-male"></i> 142 - MCO a 02 23</div>
+               <div class="btn btn-inverse cat" id="143"><i class="cus-male"></i> 143 - OLH fs 22</div>
+               <div class="btn btn-inverse cat" id="145"><i class="cus-female"></i> 145 - SRL e</div>
+               <div class="btn btn-inverse cat" id="147"><i class="cus-female"></i> 147 - SOM o</div>
                <!--div class="btn btn-large btn-inverse cat" id="148"><i class="cus-male"></i> 148</div>
                <div class="btn btn-large btn-inverse cat" id="149"><i class="cus-male"></i> 149</div>
                <div class="btn btn-large btn-inverse cat" id="152"><i class="cus-male"></i> 152</div>
@@ -119,32 +103,35 @@
             </div>
         </div>
         <div class="span3">
+            <h3>Call to ring</h3>
            <div id ="callingbox" class="well judgingbox">
            </div>
         </div>
 
         <div class="span3">
+            <h3>Ready</h3>
             <div id="readybox" class="well judgingbox">
             </div>
         </div>
 
         <div class="span3">
+          <h3>Done</h3>
            <div id="donebox" class="well judgingbox">
             </div>
         </div>
       </div>
         <div class="row">
             <div class="span3">
-                <div id="all2calling" class="btn btn-success btn-large pull-right">Call All <i class="icon-white icon-forward"></i></div><div id="undocall" class="btn btn-warning btn-large pull-right">Undo Call</div>
+                <div id="all2calling" class="btn btn-success pull-right">Call All <i class="icon-white icon-forward"></i></div><div id="undocall" class="btn btn-warning btn-large pull-right">Undo Call</div>
             </div>
             <div class="span3">
-                <div id="all2ready" class="btn btn-success btn-large pull-right">All Ready <i class="icon-white icon-forward"></i></div><div id="undoready" class="btn btn-warning btn-large pull-right">Undo Ready</div>
+                <div id="all2ready" class="btn btn-success pull-right">All Ready <i class="icon-white icon-forward"></i></div><div id="undoready" class="btn btn-warning btn-large pull-right">Undo Ready</div>
             </div>
             <div class="span3">
-                <div id="all2done" class="btn btn-success btn-large pull-right">All Done <i class="icon-white icon-forward"></i></div><div id="undodone" class="btn btn-warning btn-large pull-right">Undo Done</div>
+                <div id="all2done" class="btn btn-success pull-right">All Done <i class="icon-white icon-forward"></i></div><div id="undodone" class="btn btn-warning btn-large pull-right">Undo Done</div>
             </div>
             <div class="span3">
-                <div id="allclear" class="btn btn-success btn-large pull-right">Clear Done <i class="icon-white icon-forward"></i></div><div id="undoclear" class="btn btn-warning btn-large pull-right">Undo Clear</div>
+                <div id="allclear" class="btn btn-success pull-right">Clear Done <i class="icon-white icon-forward"></i></div><div id="undoclear" class="btn btn-warning btn-large pull-right">Undo Clear</div>
             </div>
         </div>
    
