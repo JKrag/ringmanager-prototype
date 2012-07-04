@@ -4,6 +4,10 @@ $(function() {
     var calledCats;
     var readiedCats;
     var doneCats;
+    $('#undocall').hide();
+    $('#undoready').hide();
+    $('#undodone').hide();
+    $('#undoclear').hide();
 
     var $waiting = $( "#waitingbox" ),
         $calling = $( "#callingbox" ),
@@ -39,7 +43,7 @@ $(function() {
         allButtonsGreen();
         swapCallButton(true);
     });
-    $('#undocall').hide().click(function() {
+    $('#undocall').click(function() {
         console.log('undo call')
         calledCats.appendTo($('#waitingbox'));
         sortAll();
@@ -53,7 +57,7 @@ $(function() {
         allButtonsGreen();
         swapReadyButton(true);
     });
-    $('#undoready').hide().click(function() {
+    $('#undoready').click(function() {
         console.log('undo ready')
         readiedCats.appendTo($('#callingbox'));
         sortAll();
@@ -66,7 +70,7 @@ $(function() {
         allButtonsGreen();
         swapDoneButton(true);
     });
-    $('#undodone').hide().click(function() {
+    $('#undodone').click(function() {
         console.log('undo done')
         doneCats.appendTo($('#readybox'));
         sortAll();
@@ -79,7 +83,7 @@ $(function() {
         allButtonsGreen();
         swapClearButton(true);
     });
-    $('#undoclear').hide().click(function() {
+    $('#undoclear').click(function() {
         console.log('undo clear')
         removedCats.appendTo($('#donebox'));
         allButtonsGreen();
