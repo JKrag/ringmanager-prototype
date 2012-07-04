@@ -1,5 +1,5 @@
 .judgingbox {
-    height: 500px;
+    height: 450px;
 }
 
 .ui-draggable-dragging {
@@ -20,11 +20,14 @@
 }
 
 .cat {
-    width: 200px;
+    width: 87%;
     margin-bottom: 5px;
     position: relative;
     text-align:left;
 }
 .cat small {
     font-size: 0.85em;
+}
+.alert {
+    margin-bottom: 0px;
 }
