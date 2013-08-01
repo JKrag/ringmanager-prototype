@@ -7,9 +7,14 @@ The mock-ups were created in balsamiq, but are not currently part of this repo. 
 The design I envisioned was "intended" for use on a tablet, and the idea was that it should heavily based on drag-drop interactions, so in order to have some sort of realistic user-testing, I decided to try my luck with my first ever jQuery based UI.
 
 The first tested version, where the central page was still a mockup, is online on: http://xpresso.dk/hciproject/
-The "final" prototype, with the finished interactive page, is available on: http://xpresso.dk/hciproject2/
-
+The implemented prototype, with the finished interactive page, is available on: http://xpresso.dk/hciproject2/
 The page with most of the actual fun stuff (the jQuery stuff) is http://xpresso.dk/hciproject2/judging.html
+
+This was the version on which I then performed user-tests with 3 or 4 users, and the observations led to a list of improvements of which many where implemented in "version 3" on http://xpresso.dk/hciproject3/
+
+This final version contains a number of tweeks to the was the interactions work on the judging page, and a rethink of the "page flow" through the rest of the site.
+
+---------------
 
 There is no back-end at all. These are all static html-pages with hard-coded dummy data, as the only purpose was to learn to test, evaluate and improve the user experience.
 
